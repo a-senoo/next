@@ -2,8 +2,10 @@ version: '3'
 
 services:
     frontend:
-        build: ./docker/frontend
+        build:
+            context: .
+            dockerfile: ./docker/frontend/Dockerfile
         volumes:
-            - ./frontend:/opt/frontend
+            - ./frontend:/frontend
         ports:
             - '3000:3000'
